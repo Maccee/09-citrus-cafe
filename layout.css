@@ -4,18 +4,22 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
-  background-color: #83c05b;
 }
+
+/* KOKO SIVU */
 .wrapper {
   display: flex;
   flex-direction: column;
+  background-color: #83c05b;
 }
 
+/* LOGO */
 .header figure img {
   width: 200px;
   object-fit: cover;
 }
 
+/* NAVIGOINTI */
 .nav_main ul {
   display: flex;
   flex-direction: column;
@@ -31,17 +35,19 @@ body {
   color: white;
   text-shadow: 0.11rem 0.1rem black;
 }
+
+/* TEKSTILAATIKKO */
 .main {
   padding: 1rem;
+  font-size: 2rem;
 }
 .laatikot {
-  background-color: white;
+  background-color: #83c05b;
+}
+.laatikot aside {
   padding: 1rem;
-}
-
-@media screen and (min-width: 426px) {
-}
-@media screen and (min-width: 769px) {
+  margin-block-end: 1rem;
+  background-color: white;
 }
 
 .asideheader {
@@ -50,7 +56,6 @@ body {
   padding: 1rem;
 }
 .asideheader > * {
-  border: 1px solid black;
   flex-grow: 1;
 }
 .nuoli {
@@ -58,15 +63,79 @@ body {
   text-align: right;
 }
 
-.asidekuva img {
-  margin: 1rem 0 1rem 0;
-  width: 100%;
+.asidekuva {
+  padding-block-start: 1rem;
 }
+
+.asidekuva img {
+  width: 50%;
+}
+
+/* NEWS LIST */
 .newslist {
   display: flex;
-  margin-block-start: 1rem;
+  font-size: 1.4rem;
+  padding-block-start: 1rem;
 }
 .newslist ul:nth-child(1) {
   font-weight: 700;
-  margin-inline-end: 1rem;
+  padding-inline-end: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.4rem;
+}
+.footer section p:nth-child(3) {
+  color: black;
+}
+
+/* TABLETTINÄKYMÄ */
+@media screen and (min-width: 426px) {
+  .nav_main ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .nav_main ul > * {
+    flex-basis: 100%;
+  }
+
+  .main {
+    background-color: white;
+    margin-block-end: 1rem;
+  }
+  .main p {
+    background-image: url(./images/bg.jpg);
+    background-repeat: repeat;
+    padding: 1rem;
+    background-color: white;
+  }
+
+  .laatikot {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .aside1,
+  .aside2,
+  .aside3 {
+    box-sizing: border-box;
+  }
+  
+  .aside1,
+  .aside2 {
+    flex: 0 0 50%;
+  }
+  
+  .aside3 {
+    flex: 0 0 100%;
+  }
+  
+
+  
+}
+@media screen and (min-width: 769px) {
 }
