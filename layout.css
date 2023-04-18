@@ -15,7 +15,7 @@ body {
 
 /* LOGO */
 .header figure img {
-  width: 200px;
+  width: 300px;
   object-fit: cover;
 }
 
@@ -41,10 +41,16 @@ body {
   padding: 1rem;
   font-size: 2rem;
 }
+.main figure img {
+  display: none;
+}
 .laatikot {
   background-color: #83c05b;
 }
-.laatikot aside {
+
+.aside1,
+.aside2,
+.aside3 {
   padding: 1rem;
   margin-block-end: 1rem;
   background-color: white;
@@ -68,7 +74,7 @@ body {
 }
 
 .asidekuva img {
-  width: 50%;
+  width: 100%;
 }
 
 /* NEWS LIST */
@@ -98,44 +104,56 @@ body {
   .nav_main ul {
     flex-direction: row;
     flex-wrap: nowrap;
+    margin-block-end: 1rem;
   }
   .nav_main ul > * {
     flex-basis: 100%;
   }
-
   .main {
     background-color: white;
     margin-block-end: 1rem;
   }
-  .main p {
+  .mainsection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: white;
     background-image: url(./images/bg.jpg);
     background-repeat: repeat;
-    padding: 1rem;
-    background-color: white;
   }
-
+  .main p {
+    flex-basis: 100%;
+    padding: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .main figure {
+    flex-basis: 100%;
+  }
+  .main figure img {
+    display: block;
+    width: 100%;
+  }
   .laatikot {
     display: flex;
     flex-wrap: wrap;
   }
-  
-  .aside1,
-  .aside2,
-  .aside3 {
-    box-sizing: border-box;
-  }
-  
   .aside1,
   .aside2 {
+    box-sizing: border-box;
     flex: 0 0 50%;
   }
-  
-  .aside3 {
-    flex: 0 0 100%;
+  .aside1 {
+    padding: 1rem 0.5rem 1rem 1rem;
   }
-  
-
-  
+  .aside2 {
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
+  .aside3 {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+  }
 }
 @media screen and (min-width: 769px) {
 }
