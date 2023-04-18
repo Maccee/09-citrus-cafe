@@ -3,21 +3,14 @@ html {
 }
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  background-color: #83c05b;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #83c05b;
-}
-.wrapper > * {
-  flex-grow: 1;
-  flex-basis: 100%;
 }
 
-.header {
-  background-color: #83c05b;
-}
 .header figure img {
   width: 200px;
   object-fit: cover;
@@ -29,11 +22,9 @@ body {
   flex-wrap: wrap;
 }
 .nav_main ul > * {
-  flex-grow: 1;
-  flex-basis: 100%;
   border: solid green 1px;
   border-radius: 1rem;
-  font-size: 1.6rem;
+  box-shadow: 1px 1px black;
   text-align: center;
   padding: 1rem;
   background-color: #9dcd7c;
@@ -42,7 +33,10 @@ body {
 }
 .main {
   padding: 1rem;
-  font-size: 1.6rem;
+}
+.laatikot {
+  background-color: white;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 426px) {
@@ -50,34 +44,29 @@ body {
 @media screen and (min-width: 769px) {
 }
 
-.aside1 {
-  background-color: white;
-  margin-block-end: 1rem;
-}
-.aside2 {
-  background-color: white;
-  margin-block-end: 1rem;
-}
-.aside3 {
-  background-color: white;
-  margin-block-end: 1rem;
-}
-
 .asideheader {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin: 1rem;
-  padding: 1rem;
   background-color: #cbcbcb;
+  padding: 1rem;
 }
 .asideheader > * {
-  flex-grow: 0;
-  flex-basis: 100%;
+  border: 1px solid black;
+  flex-grow: 1;
 }
 .nuoli {
+  flex-grow: 0;
   text-align: right;
 }
 
-.asidekuva {
+.asidekuva img {
+  margin: 1rem 0 1rem 0;
+  width: 100%;
+}
+.newslist {
+  display: flex;
+  margin-block-start: 1rem;
+}
+.newslist ul:nth-child(1) {
+  font-weight: 700;
+  margin-inline-end: 1rem;
 }
