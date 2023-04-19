@@ -4,27 +4,32 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
-}
-
-/* KOKO SIVU */
-.wrapper {
-  display: flex;
-  flex-direction: column;
   background-color: #83c05b;
 }
 
-/* LOGO */
+/* KOKO SIVU FLEXATAAN ALLEKAIN */
+.flex-page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADERIN KUVA, LOGO, RESPONSIIVISEKSI */
 .header figure img {
   max-width: 100%;
 }
 
-/* NAVIGOINTI */
-.nav_main ul {
+/* NAVIGOINTIPALKKI */
+.navbar {
+  margin-block-end: 0.5rem;
+}
+/* NAVIGOINTIPALKKI FLEXATAAN ALLEKAIN MOBIILISSA */
+.navbar ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.nav_main ul > * {
+/* NAVIGOINTIPALKIN NAPPIEN MUOTOILUT */
+.navbar ul > * {
   border: solid green 1px;
   border-radius: 1rem;
   box-shadow: 1px 1px black;
@@ -35,146 +40,151 @@ body {
   text-shadow: 0.11rem 0.1rem black;
 }
 
-/* TEKSTILAATIKKO */
-.main {
-  padding: 1rem;
-  font-size: 2rem;
-}
-.main figure img {
-  display: none;
-}
-.laatikot {
-  background-color: #83c05b;
-}
-
-.aside1,
-.aside2,
-.aside3 {
+/* ARTICLE-LAATIKKO */
+.article {
   padding: 1rem;
   margin-block-end: 1rem;
-  background-color: white;
+}
+/* ARTICLE-LAATIKON KUVA PIILOTETAAN MOBIILISSA */
+.article-inner-box figure {
+  display: none;
 }
 
-.asideheader {
+/* KOLME LAATIKKOA FLEXATAAN ALLEKAIN MOBIILISSA */
+.flex-main {
   display: flex;
-  background-color: #cbcbcb;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-end: 1rem;
+}
+/* KOLMEN LAATIKON LAPSET SAMANKOKOISIA */
+.flex-main > * {
+  background-color: white;
   padding: 1rem;
+  flex-basis: 100%;
 }
-.asideheader > * {
-  flex-grow: 1;
+/* KOLMEN LAATIKON SISÄLTÖ FLEXATAAN ALLEKAIN MOBIILISSA */
+.box1,
+.box2,
+.box3 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.nuoli {
-  flex-grow: 0;
-  text-align: right;
+/* FLEXTATAAN KOLMEN LAATIKON OTSIKKOLAATIKON OSAT RIVIIN, JA EROTELLAAN TEKSTI JA NUOLI */
+.box-headers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #cbcbcb;
 }
-
-.asidekuva {
-  padding-block-start: 1rem;
+/* KAHDEN ENSIMMÄISEN LAATIKON KUVAN RESPONSIIVISUUS */
+.box-images img {
+  max-width: 100%;
 }
-
-.asidekuva img {
-  width: 100%;
-}
-
-/* NEWS LIST */
+/* KOLMANNEN LAATIKON TAPAHTUMALISTA FLEXTATAAN RIVIIN */
 .newslist {
   display: flex;
-  font-size: 1.4rem;
-  padding-block-start: 1rem;
 }
-.newslist ul:nth-child(1) {
+/* PÄIVÄMÄÄRÄ-OSAAN BOLDAUS JA PADDING */
+.newslist ul:first-child {
   font-weight: 700;
   padding-inline-end: 1rem;
 }
+/* TAPAHTUMA-OSASSA ESTETÄÄN AUTOMAATTINEN RIVITYS */
 .newslist ul:nth-child(2) {
   white-space: nowrap;
 }
 
-
-/* FOOTER */
+/* FOOTERI FLEXTATAAN RIVIIN JA EROTELLAAN SOMENAPIT YHTEYSTIEDOISTA */
 .footer {
   display: flex;
   justify-content: space-between;
   color: white;
   font-size: 1.4rem;
 }
+/* PUHELINNUMERO MUSTAKSI */
 .footer section p:nth-child(3) {
   color: black;
 }
 
 /* TABLETTINÄKYMÄ */
 @media screen and (min-width: 426px) {
-  .nav_main ul {
+  /* NAVIGOINTIPALKKI RIVIIN */
+    .navbar ul {
     flex-direction: row;
-    flex-wrap: nowrap;
-    margin-block-end: 1rem;
   }
-  .nav_main ul > * {
-    flex-basis: 100%;
+  /* NAVIGOINTIPALKIN LAPSISTA SAMANKOKOISET JA KOKO RUUDUN LEVEYDELLE */
+  .navbar ul > * {
+    flex-grow: 1;
   }
-  .main {
+  /* ARTICLELAATIKON TAUSTA VALKOISEKSI KOSKA PADDING */
+  .article {
     background-color: white;
-    margin-block-end: 1rem;
   }
-  .mainsection {
+  /* ARTICLE LAATIKKO FLEXATAAN RIVIIN JA EROTELLAAN TEKSTI JA KUVA
+  LISÄTÄÄN TAUSTAKUVA */
+  .article-inner-box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    background-color: white;
+    justify-content: space-between;
     background-image: url(./images/bg.jpg);
-    background-repeat: repeat;
+    padding-inline-start: 1rem;
   }
-  .main p {
-    flex-basis: 100%;
-    padding: 1rem;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  .main figure {
-    flex-basis: 60%;
-  }
-  .main figure img {
+  /* OTETAAN ARTICLELAATIKON KUVA NÄKYVIIN TABLETTINÄKYMÄSSÄ */
+  .article-inner-box figure {
     display: block;
+    flex-basis: 50%;
+  }
+  /* SIIRRETÄÄN ARTICLELAATIKON KUVA FIGURE-LAATIKON OIKEAAN REUNAAN */
+  .article-inner-box figure img {
     max-width: 100%;
     float: right;
   }
-  .laatikot {
-    display: flex;
-    flex-wrap: wrap;
+  /* KESKITETÄÄN ARTICLE-LAATIKON TEKSTI */
+  .article p {
+    margin: auto 0 auto 0;
+    flex-basis: 80%;
   }
-  .aside1,
-  .aside2 {
-    box-sizing: border-box;
-    flex: 0 0 50%;
+  /* POISTETAAN TABLETTINÄKYMÄSSÄ YLIMÄÄRÄISET VÄLIT */
+  .flex-main {
+    gap: 0;
   }
-  .aside1 {
-    padding: 1rem 0.5rem 1rem 1rem;
+  /* KOLMESTA LAATIKOSTA KAKSI ENSIMMÄISTÄ PÄÄSEE VIEREKKÄIN */
+  .box1,
+  .box2 {
+    flex-basis: 0;
+    flex-grow: 1;
   }
-  .aside2 {
-    padding: 1rem 1rem 1rem 0.5rem;
+  /* YLIMÄÄRÄISIÄ VÄLEJÄ KORJAILLAAN */
+  .box1 {
+    padding-inline-end: 0.5rem;
   }
-  .aside3 {
-    display: block;
-    width: 100%;
-    padding: 1rem;
+  .box2 {
+    padding-inline-start: 0.5rem;
+  }
+  .box3 {
+    margin-block-start: 1rem;
   }
 }
+
+/* DESKTOP-NÄKYMÄ */
 @media screen and (min-width: 769px) {
-  .wrapper {
-    padding: 2rem;
+  /* KOKO SIVUN REUNOILLE PADDING */
+    body {
+    padding: 0 2rem 0 2rem;
   }
-  .laatikot {
-    flex-wrap: nowrap;
+  /* YLIMÄÄRÄISIÄ VÄLEJÄ MUOKATAAN */
+  .box2 {
+    padding-inline-end: 0.5rem;
   }
-  .aside3,
-  .aside1,
-  .aside2 {
-    flex: auto;
-  }
-  .aside2 {
-    padding: 1rem 0.5rem 1rem 0.5rem;
-  }
-  .aside3 {
-    padding: 1rem 1rem 1rem 0.5rem;
+  /* OTETAAN KOLMAS LAATIKKO MUKAAN RIVIIN */
+  .box3 {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-block-start: 0;
+    padding-inline-start: 0.5rem;
   }
 }
