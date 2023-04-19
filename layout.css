@@ -127,11 +127,12 @@ body {
     margin-bottom: auto;
   }
   .main figure {
-    flex-basis: 100%;
+    flex-basis: 60%;
   }
   .main figure img {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    float: right;
   }
   .laatikot {
     display: flex;
@@ -155,4 +156,21 @@ body {
   }
 }
 @media screen and (min-width: 769px) {
+  .wrapper {
+    padding: 2rem;
+  }
+  .laatikot {
+    flex-wrap: nowrap;
+  }
+  .aside3,
+  .aside1,
+  .aside2 {
+    flex: auto;
+  }
+  .aside2 {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  .aside3 {
+    padding: 1rem 1rem 1rem 0.5rem;
+  }
 }
