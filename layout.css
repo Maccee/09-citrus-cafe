@@ -85,18 +85,21 @@ body {
 .box-images img {
   max-width: 100%;
 }
-/* KOLMANNEN LAATIKON TAPAHTUMALISTA FLEXTATAAN RIVIIN */
+/* KOLMANNEN LAATIKON TAPAHTUMALISTA FLEXTATAAN ALLEKAIN */
 .newslist {
   display: flex;
+  flex-direction: column;
 }
-/* PÄIVÄMÄÄRÄ-OSAAN BOLDAUS JA PADDING */
-.newslist ul:first-child {
+/* TAPAHTUMAT FLEXTATAAN RIVIIN */
+.newslist ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* PÄIVÄMÄÄRÄ-OSAAN BOLDAUS JA TASAUS */
+.newslist ul li:first-child {
   font-weight: 700;
-  padding-inline-end: 1rem;
-}
-/* TAPAHTUMA-OSASSA ESTETÄÄN AUTOMAATTINEN RIVITYS */
-.newslist ul:nth-child(2) {
-  white-space: nowrap;
+  width: 4rem;
 }
 
 /* FOOTERI FLEXTATAAN RIVIIN JA EROTELLAAN SOMENAPIT YHTEYSTIEDOISTA */
@@ -114,7 +117,7 @@ body {
 /* TABLETTINÄKYMÄ */
 @media screen and (min-width: 426px) {
   /* NAVIGOINTIPALKKI RIVIIN */
-    .navbar ul {
+  .navbar ul {
     flex-direction: row;
   }
   /* NAVIGOINTIPALKIN LAPSISTA SAMANKOKOISET JA KOKO RUUDUN LEVEYDELLE */
@@ -173,7 +176,7 @@ body {
 /* DESKTOP-NÄKYMÄ */
 @media screen and (min-width: 769px) {
   /* KOKO SIVUN REUNOILLE PADDING */
-    body {
+  body {
     padding: 0 2rem 0 2rem;
   }
   /* YLIMÄÄRÄISIÄ VÄLEJÄ MUOKATAAN */
